@@ -43,6 +43,8 @@ const retrieveTitle = () =>
 const retrieveLink = () =>
 	document.querySelector(".js-share-link").href;
 
+const retrieveSitename = () =>
+	document.querySelector("#footer > div > nav > div:nth-child(1) > h5 > a")
 
 const formatTitle = title =>
 	title.replace(new RegExp(titleWordsFilter), "").trim();
@@ -50,16 +52,23 @@ const formatTitle = title =>
 const formatLink = link =>
 	link.slice(0, link.lastIndexOf("/"));
 
+const decapitalilzeSitename = sitename =>
+        sitename.charAt(0).toUpperCase() + sitename.substr(1).toLowerCase();
+
+const formatSite = fullsitename =>
+	fullsitename + ` Stack Exhange`;
+
 
 const retrieveFormattedTitle = compose(retrieveTitle, formatTitle, escapeSquareBrackets);
 const retrieveFormattedLink = compose(retrieveLink, formatLink);
+const retrieveFormattedSitename = compose(retrieveSitename, decapitalilzeSitename, formatSite);
 
 
-const formatMarkdown = (title, link)	=>
-	`[Question: ${title}](${link})`;
+const formatMarkdown = (title, link, site)	=>
+	`[Question: ${title} at ${site}](${link})`;
 
 const createMarkdown = () =>
-	formatMarkdown(retrieveFormattedTitle(), retrieveFormattedLink());
+	formatMarkdown(retrieveFormattedTitle(), retrieveFormattedLink(), retrieveFormattedSitename());
 
 
 const createLink = text => {

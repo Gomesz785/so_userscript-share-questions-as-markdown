@@ -56,7 +56,7 @@ const retrieveFormattedLink = compose(retrieveLink, formatLink);
 
 
 const formatMarkdown = (title, link)	=>
-	`[${title}](${link})`;
+	`[Question: ${title}](${link})`;
 
 const createMarkdown = () =>
 	formatMarkdown(retrieveFormattedTitle(), retrieveFormattedLink());

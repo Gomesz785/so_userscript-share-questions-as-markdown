@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name			Stack Exchange - share anonymous markdown links
-// @namespace		https://github.com/PurpleMagick/
+// @name			Stack Exchange Share Markdown Links
+// @namespace		https://github.com/Gomesz785
 // @description		Adds a share button that produces markdown links. The user ID is trimmed from that link.
-// @author			VLAZ
-// @version			1.2.1
+// @author			Gomesz785; VLAZ
+// @version			0.1.0
 //
 // @include			/^https:\/\/(?:meta\.)?stackoverflow\.com\/questions\/\d+\/.*$/
 // @include			/^https:\/\/(?:meta\.)?serverfault\.com\/questions\/\d+\/.*$/
